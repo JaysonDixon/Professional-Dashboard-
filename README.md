@@ -1,4 +1,3 @@
-# Professional-Dashboard-
 // main.cpp
 // Personal Productivity Dashboard
 // Starter code skeleton for GitHub repository
@@ -6,13 +5,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
-
-// Forward declarations of core modules
-class HabitLog;
-class AnalyticsModule;
-class SuggestionEngine;
-class ChartView;
-class GamifiedEnvironment;
 
 // -------------------------------
 // Core Module Interfaces
@@ -22,15 +14,13 @@ class HabitLog {
 public:
     void logHabit(const std::string& habitName) {
         std::cout << "Habit logged: " << habitName << std::endl;
-        // TODO: Save to JSON persistence
-        // TODO: Notify observers (Analytics, Suggestions, Charts, GamifiedEnv)
+        // Placeholder for persistence and observer notifications
     }
 };
 
 class AnalyticsModule {
 public:
     void update() {
-        // TODO: Calculate streaks and trends
         std::cout << "Analytics updated." << std::endl;
     }
 };
@@ -38,7 +28,6 @@ public:
 class SuggestionEngine {
 public:
     void update() {
-        // TODO: Generate motivational suggestions
         std::cout << "Suggestions updated." << std::endl;
     }
 };
@@ -46,7 +35,6 @@ public:
 class ChartView {
 public:
     void update() {
-        // TODO: Render line/bar charts using SFML primitives
         std::cout << "Chart view updated." << std::endl;
     }
 };
@@ -54,7 +42,6 @@ public:
 class GamifiedEnvironment {
 public:
     void update() {
-        // TODO: Unlock visuals based on milestones
         std::cout << "Gamified environment updated." << std::endl;
     }
 };
@@ -70,8 +57,16 @@ int main() {
     // Load font (placeholder)
     sf::Font font;
     if (!font.loadFromFile("assets/arial.ttf")) {
-        std::cerr << "Failed to load font." << std::endl;
+        std::cerr << "Failed to load font. Make sure assets/arial.ttf exists." << std::endl;
     }
+
+    // Create a simple text label
+    sf::Text title;
+    title.setFont(font);
+    title.setString("Personal Productivity Dashboard");
+    title.setCharacterSize(24);
+    title.setFillColor(sf::Color::Black);
+    title.setPosition(100.f, 50.f);
 
     // Create modules
     HabitLog habitLog;
@@ -100,10 +95,10 @@ int main() {
         // Clear and draw
         window.clear(sf::Color::White);
 
-        // TODO: Draw UI components (menu, dashboard, charts, gamified scene)
+        // Draw placeholder UI
+        window.draw(title);
 
         window.display();
     }
 
     return 0;
-}
